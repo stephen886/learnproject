@@ -1,0 +1,30 @@
+server:
+  port: 9091
+
+common:
+  host: 106.52.218.57
+  mysql:
+    port: 3306
+    username: root
+    password: rootAdminpwd
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${common.host:localhost}:${common.mysql.port:3306}/ssmdemo?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: ${common.mysql.username:root}
+    password: ${common.mysql.password:rootAdminpwd}
+  redis:
+    host: 106.52.218.57
+    port: 6379
+    password: nt85535888
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**.xml
+
+system:
+  file:
+    encrypt:
+      type: jpg,png,txt #文件加密类型
+      size: 10485760 #文件加密大小
